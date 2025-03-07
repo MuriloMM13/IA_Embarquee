@@ -1,0 +1,22 @@
+!SESSION 2025-03-07 08:53:18.792 -----------------------------------------------
+eclipse.buildId=Version 1.16.1
+java.version=17.0.11
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=pt_BR
+Framework arguments:  D:\EMSE\IA EMBARQUEE\RepositorioRemoto\IA_Embarquee\IA_Embarquee\.project
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 D:\EMSE\IA EMBARQUEE\RepositorioRemoto\IA_Embarquee\IA_Embarquee\.project
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2025-03-07 08:54:28.355
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2025-03-07 08:54:28.376
+!MESSAGE Log4j2 initialized with config file D:\EMSE\IA EMBARQUEE\RepositorioRemoto\IA_Embarquee\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2025-03-07 08:54:34.024
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-03-07 08:54:53.057
+!MESSAGE Indexed 'IA_Embarquee' (43 sources, 207 headers) in 15.2 sec: 22,549 declarations; 108,122 references; 11 unresolved inclusions; 1,760 syntax errors; 2,698 unresolved names (2%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-03-07 08:55:34.919
+!MESSAGE Indexed 'MNIST' (0 sources, 0 headers) in 0 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
