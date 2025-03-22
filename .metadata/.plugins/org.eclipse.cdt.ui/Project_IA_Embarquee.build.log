@@ -1,0 +1,10 @@
+00:36:52 **** Incremental Build of configuration Debug for project Project_IA_Embarquee ****
+make -j8 all 
+arm-none-eabi-size  Project_IA_Embarquee.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50608	   1948	   5740	  58296	   e3b8	Project_IA_Embarquee.elf
+Finished building: default.size.stdout
+ 
+
+00:36:52 Build Finished. 0 errors, 0 warnings. (took 565ms)
+
