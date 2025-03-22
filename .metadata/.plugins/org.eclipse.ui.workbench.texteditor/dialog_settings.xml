@@ -6,8 +6,9 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="synchronize_UART"/>
+		<item key="selection" value="mnist"/>
 		<list key="findhistory">
+			<item value="mnist"/>
 			<item value="synchronize_UART"/>
 			<item value="USER CODE BEGIN 6"/>
 			<item value="void sync"/>
