@@ -1,0 +1,13 @@
+../X-CUBE-AI/App/machine_failure.c:372:9:machine_failure_configure_activations	2
+../X-CUBE-AI/App/machine_failure.c:405:9:machine_failure_configure_weights	2
+../X-CUBE-AI/App/machine_failure.c:444:9:ai_machine_failure_get_info	4
+../X-CUBE-AI/App/machine_failure.c:491:9:ai_machine_failure_get_report	4
+../X-CUBE-AI/App/machine_failure.c:538:10:ai_machine_failure_get_error	1
+../X-CUBE-AI/App/machine_failure.c:545:10:ai_machine_failure_create	1
+../X-CUBE-AI/App/machine_failure.c:556:10:ai_machine_failure_create_and_init	8
+../X-CUBE-AI/App/machine_failure.c:591:12:ai_machine_failure_inputs_get	2
+../X-CUBE-AI/App/machine_failure.c:602:12:ai_machine_failure_outputs_get	2
+../X-CUBE-AI/App/machine_failure.c:613:11:ai_machine_failure_destroy	1
+../X-CUBE-AI/App/machine_failure.c:620:9:ai_machine_failure_init	2
+../X-CUBE-AI/App/machine_failure.c:637:8:ai_machine_failure_run	1
+../X-CUBE-AI/App/machine_failure.c:645:8:ai_machine_failure_forward	1

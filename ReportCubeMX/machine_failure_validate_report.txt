@@ -1,0 +1,265 @@
+ST Edge AI Core v2.0.0-20049
+Created date          : 2025-03-23 23:27:11
+Parameters            : validate --target stm32l4 --name machine_failure -m D:/EMSE/IA EMBARQUEE/RepositorioRemoto/IA_Embarquee/archives_from_colab/model_test.h5 --compression none --verbosity 1 --workspace C:/Users/cncai/AppData/Local/Temp/mxAI_workspace40131816548006402346749510089144 --output C:/Users/cncai/.stm32cubemx/network_output --valoutput D:/EMSE/IA EMBARQUEE/RepositorioRemoto/IA_Embarquee/archives_from_colab/Y_test_labels.npy --valinput D:/EMSE/IA EMBARQUEE/RepositorioRemoto/IA_Embarquee/archives_from_colab/X_test_labels.npy
+
+Exec/report summary (validate)
+-------------------------------------------------------------------------------------------------------------------
+model file         :   D:\EMSE\IA EMBARQUEE\RepositorioRemoto\IA_Embarquee\archives_from_colab\model_test.h5       
+type               :   keras                                                                                       
+c_name             :   machine_failure                                                                             
+compression        :   none                                                                                        
+options            :   allocate-inputs, allocate-outputs                                                           
+optimization       :   balanced                                                                                    
+target/series      :   stm32l4                                                                                     
+workspace dir      :   C:\Users\cncai\AppData\Local\Temp\mxAI_workspace40131816548006402346749510089144            
+output dir         :   C:\Users\cncai\.stm32cubemx\network_output                                                  
+vinput files       :   D:\EMSE\IA EMBARQUEE\RepositorioRemoto\IA_Embarquee\archives_from_colab\X_test_labels.npy   
+voutput files      :   D:\EMSE\IA EMBARQUEE\RepositorioRemoto\IA_Embarquee\archives_from_colab\Y_test_labels.npy   
+model_fmt          :   float                                                                                       
+model_name         :   model_test                                                                                  
+model_hash         :   0x014d3b18ccf686a8700737962a8d9ccb                                                          
+params #           :   2,949 items (11.52 KiB)                                                                     
+-------------------------------------------------------------------------------------------------------------------
+input 1/1          :   'input_0', f32(1x8), 32 Bytes, activations                                                  
+output 1/1         :   'dense_41', f32(1x5), 20 Bytes, activations                                                 
+macc               :   3,184                                                                                       
+weights (ro)       :   11,284 B (11.02 KiB) (1 segment) / -512(-4.3%) vs float model                               
+activations (rw)   :   384 B (384 B) (1 segment) *                                                                 
+ram (total)        :   384 B (384 B) = 384 + 0 + 0                                                                 
+-------------------------------------------------------------------------------------------------------------------
+(*) 'input'/'output' buffers can be used from the activations buffer
+
+Model name - model_test
+------ -------------------------------------------------------- ------------ ------------- ------- ------------------------ --- ----------------- --------------- ------------------------------- 
+m_id   layer (type,original)                                    oshape       param/size       macc             connected to   | c_size            c_macc          c_type                          
+------ -------------------------------------------------------- ------------ ------------- ------- ------------------------ --- ----------------- --------------- ------------------------------- 
+0      input_0 (Input, None)                                    [b:1,c:8]                                                     |                                   
+       dense_39 (Dense, Dense)                                  [b:1,c:64]   576/2,304         576                  input_0   | -2,304(-100.0%)   -576(-100.0%)   
+------ -------------------------------------------------------- ------------ ------------- ------- ------------------------ --- ----------------- --------------- ------------------------------- 
+1      batch_normalization_20 (ScaleBias, BatchNormalization)   [b:1,c:64]   128/512           128                 dense_39   | +1,792(+350.0%)   +448(+350.0%)   Dense_[0]                       
+------ -------------------------------------------------------- ------------ ------------- ------- ------------------------ --- ----------------- --------------- ------------------------------- 
+2      leaky_re_lu_26 (Nonlinearity, LeakyReLU)                 [b:1,c:64]                      64   batch_normalization_20   |                   +128(+200.0%)   Nonlinearity_[1]                
+------ -------------------------------------------------------- ------------ ------------- ------- ------------------------ --- ----------------- --------------- ------------------------------- 
+4      dense_40 (Dense, Dense)                                  [b:1,c:32]   2,080/8,320     2,080           leaky_re_lu_26   |                                   Dense_[2]                       
+------ -------------------------------------------------------- ------------ ------------- ------- ------------------------ --- ----------------- --------------- ------------------------------- 
+5      leaky_re_lu_27 (Nonlinearity, LeakyReLU)                 [b:1,c:32]                      32                 dense_40   |                   +64(+200.0%)    Nonlinearity_[3]                
+------ -------------------------------------------------------- ------------ ------------- ------- ------------------------ --- ----------------- --------------- ------------------------------- 
+7      dense_41_dense (Dense, Dense)                            [b:1,c:5]    165/660           165           leaky_re_lu_27   |                   +75(+45.5%)     Dense_/Nonlinearity_[o][4, 5]   
+       dense_41 (Nonlinearity, Dense)                           [b:1,c:5]                       75           dense_41_dense   |                   -75(-100.0%)    
+------ -------------------------------------------------------- ------------ ------------- ------- ------------------------ --- ----------------- --------------- ------------------------------- 
+model/c-model: macc=3,120/3,184 +64(+2.1%) weights=11,796/11,284 -512(-4.3%) activations=--/384 io=--/0
+
+
+
+Generated C-graph summary
+------------------------------------------------------------------------------------------------------------------------
+model name            : model_test
+c-name                : machine_failure
+c-node #              : 6
+c-array #             : 13
+activations size      : 384 (1 segment)
+weights size          : 11284 (1 segment)
+macc                  : 3184
+inputs                : ['input_0_output']
+outputs               : ['dense_41_output']
+
+C-Arrays (13)
+------ ------------------------ ----------- ------------------------- ------------- --------- 
+c_id   name (*_array)           item/size   domain/mem-pool           c-type        comment   
+------ ------------------------ ----------- ------------------------- ------------- --------- 
+0      dense_39_bias            64/256      weights/weights           const float             
+1      dense_39_output          64/256      activations/**default**   float                   
+2      dense_39_weights         512/2048    weights/weights           const float             
+3      dense_40_bias            32/128      weights/weights           const float             
+4      dense_40_output          32/128      activations/**default**   float                   
+5      dense_40_weights         2048/8192   weights/weights           const float             
+6      dense_41_dense_bias      5/20        weights/weights           const float             
+7      dense_41_dense_output    5/20        activations/**default**   float                   
+8      dense_41_dense_weights   160/640     weights/weights           const float             
+9      dense_41_output          5/20        activations/**default**   float         /output   
+10     input_0_output           8/32        activations/**default**   float         /input    
+11     leaky_re_lu_26_output    64/256      activations/**default**   float                   
+12     leaky_re_lu_27_output    32/128      activations/**default**   float                   
+------ ------------------------ ----------- ------------------------- ------------- --------- 
+
+C-Layers (6)
+------ ---------------- ---- --------------- ------ ------ --------------------------- ------------------ 
+c_id   name (*_layer)   id   layer_type      macc   rom    tensors                     shape (array id)   
+------ ---------------- ---- --------------- ------ ------ --------------------------- ------------------ 
+0      dense_39         1    Dense           576    2304   I: input_0_output           f32(1x8) (10)      
+                                                           W: dense_39_weights         f32(64x8) (2)      
+                                                           W: dense_39_bias            f32(64) (0)        
+                                                           O: dense_39_output          f32(1x64) (1)      
+------ ---------------- ---- --------------- ------ ------ --------------------------- ------------------ 
+1      leaky_re_lu_26   2    Nonlinearity    192    0      I: dense_39_output          f32(1x64) (1)      
+                                                           O: leaky_re_lu_26_output    f32(1x64) (11)     
+------ ---------------- ---- --------------- ------ ------ --------------------------- ------------------ 
+2      dense_40         4    Dense           2080   8320   I: leaky_re_lu_26_output    f32(1x64) (11)     
+                                                           W: dense_40_weights         f32(32x64) (5)     
+                                                           W: dense_40_bias            f32(32) (3)        
+                                                           O: dense_40_output          f32(1x32) (4)      
+------ ---------------- ---- --------------- ------ ------ --------------------------- ------------------ 
+3      leaky_re_lu_27   5    Nonlinearity    96     0      I: dense_40_output          f32(1x32) (4)      
+                                                           O: leaky_re_lu_27_output    f32(1x32) (12)     
+------ ---------------- ---- --------------- ------ ------ --------------------------- ------------------ 
+4      dense_41_dense   7    Dense           165    660    I: leaky_re_lu_27_output    f32(1x32) (12)     
+                                                           W: dense_41_dense_weights   f32(5x32) (8)      
+                                                           W: dense_41_dense_bias      f32(5) (6)         
+                                                           O: dense_41_dense_output    f32(1x5) (7)       
+------ ---------------- ---- --------------- ------ ------ --------------------------- ------------------ 
+5      dense_41         7    Nonlinearity    75     0      I: dense_41_dense_output    f32(1x5) (7)       
+                                                           O: dense_41_output          f32(1x5) (9)       
+------ ---------------- ---- --------------- ------ ------ --------------------------- ------------------ 
+ 
+Setting validation data...
+ loading file: D:\EMSE\IA EMBARQUEE\RepositorioRemoto\IA_Embarquee\archives_from_colab\X_test_labels.npy
+   samples are reshaped: (266, 8) -> (266, 1, 1, 8)
+ loading file: D:\EMSE\IA EMBARQUEE\RepositorioRemoto\IA_Embarquee\archives_from_colab\Y_test_labels.npy
+   samples are reshaped: (266, 5) -> (266, 1, 1, 5)
+   I[1]: (266, 1, 1, 8)/float32, min/max=[0.000000, 1.000000], mean/std=[0.405126, 0.348204]
+   O[1]: (266, 1, 1, 5)/float32, min/max=[0.000000, 1.000000], mean/std=[0.200000, 0.400000]
+ 
+Running the ST.AI c-model (AI RUNNER)...(name=machine_failure, mode=HOST)
+
+ DLL Driver v2.0 - Direct Python binding (C:\Users\cncai\AppData\Local\Temp\mxAI_workspace40131816548006402346749510089144\inspector_machine_failure\workspace\lib\libai_machine_failure.dll) ['machine_failure']
+  
+  Summary 'machine_failure' - ['machine_failure']
+  ----------------------------------------------------------------------------------------------
+  I[1/1] 'input_1'    :   f32[1,1,1,8], 32 Bytes, in activations buffer                         
+  O[1/1] 'output_1'   :   f32[1,1,1,5], 20 Bytes, in activations buffer                         
+  n_nodes             :   6                                                                     
+  activations         :   384                                                                   
+  weights             :   11284                                                                 
+  macc                :   3184                                                                  
+  hash                :   0x014d3b18ccf686a8700737962a8d9ccb                                    
+  compile_datetime    :   Mar 23 2025 23:27:07                                                  
+  ----------------------------------------------------------------------------------------------
+  protocol            :   DLL Driver v2.0 - Direct Python binding                               
+  tools               :   ST.AI (legacy api) v2.0.0                                             
+  runtime lib         :   v10.0.0                                                               
+  capabilities        :   IO_ONLY, PER_LAYER, PER_LAYER_WITH_DATA                               
+  device.desc         :   AMD64, Intel64 Family 6 Model 140 Stepping 1, GenuineIntel, Windows   
+  ----------------------------------------------------------------------------------------------
+ 
+ NOTE: The duration and execution time per layer are just indications. They depend on the host machine's workload.
+
+  
+  ST.AI Profiling results v2.0 - "machine_failure"
+  ------------------------------------------------------------
+  nb sample(s)   :   266                                      
+  duration       :   0.005 ms by sample (0.001/0.041/0.003)   
+  macc           :   3184                                     
+  ------------------------------------------------------------
+  
+  Statistic per tensor
+  --------------------------------------------------------------------------------
+  tensor   #     type[shape]:size       min     max     mean      std  name       
+  --------------------------------------------------------------------------------
+  I.0      266   f32[1,1,1,8]:32      0.000   1.000    0.405    0.348  input_1    
+  O.0      266   f32[1,1,1,5]:20      0.000   0.998    0.200    0.331  output_1   
+  --------------------------------------------------------------------------------
+ 
+Saving validation data...
+ output directory: C:\Users\cncai\.stm32cubemx\network_output
+ creating C:\Users\cncai\.stm32cubemx\network_output\machine_failure_val_io.npz
+ m_outputs_1: (266, 1, 1, 5)/float32, min/max=[0.000000, 0.998206], mean/std=[0.200000, 0.331170], dense_41
+ c_outputs_1: (266, 1, 1, 5)/float32, min/max=[0.000000, 0.998206], mean/std=[0.200000, 0.331170], dense_41
+
+ 
+Computing the metrics...
+
+ Accuracy report #1 for the generated HOST C-model
+ ----------------------------------------------------------------------------------------------------
+ notes: - computed against the provided ground truth values
+        - 266 samples (5 items per sample)
+
+  acc=87.97% rmse=0.196851775 mae=0.089076728 l2r=0.508822441 mean=0.000000 std=0.196926 nse=0.757991 cos=0.898535 
+ 
+  Confusion matrix (axis=-1) - 5 classes (266 samples)
+  ---------------------------------
+  C0       177  16    3    3    6  
+  C1        2    6    .    .    .  
+  C2        .    1   20    .    .  
+  C3        .    .    .   16    .  
+  C4        .    .    .    1   15  
+
+ Accuracy report #1 for the reference model
+ ----------------------------------------------------------------------------------------------------
+ notes: - computed against the provided ground truth values
+        - 266 samples (5 items per sample)
+
+  acc=87.97% rmse=0.196851775 mae=0.089076728 l2r=0.508822441 mean=-0.000000 std=0.196926 nse=0.757991 cos=0.898535 
+ 
+  Confusion matrix (axis=-1) - 5 classes (266 samples)
+  ---------------------------------
+  C0       177  16    3    3    6  
+  C1        2    6    .    .    .  
+  C2        .    1   20    .    .  
+  C3        .    .    .   16    .  
+  C4        .    .    .    1   15  
+
+ Cross accuracy report #1 (reference vs C-model)
+ ----------------------------------------------------------------------------------------------------
+ notes: - the output of the reference model is used as ground truth/reference value
+        - 266 samples (5 items per sample)
+
+  acc=100.00% rmse=0.000000051 mae=0.000000023 l2r=0.000000131 mean=0.000000 std=0.000000 nse=1.000000 cos=1.000000 
+ 
+  Confusion matrix (axis=-1) - 5 classes (266 samples)
+  ---------------------------------
+  C0       179   .    .    .    .  
+  C1        .   23    .    .    .  
+  C2        .    .   23    .    .  
+  C3        .    .    .   20    .  
+  C4        .    .    .    .   21  
+
+
+Number of operations per c-layer
+------- ------ ------------------------------- ------- -------------- 
+c_id    m_id   name (type)                         #op           type 
+------- ------ ------------------------------- ------- -------------- 
+0       1      dense_39 (Dense)                    576   smul_f32_f32 
+1       2      leaky_re_lu_26 (Nonlinearity)       192     op_f32_f32 
+2       4      dense_40 (Dense)                  2,080   smul_f32_f32 
+3       5      leaky_re_lu_27 (Nonlinearity)        96     op_f32_f32 
+4       7      dense_41_dense (Dense)              165   smul_f32_f32 
+5       7      dense_41 (Nonlinearity)              75     op_f32_f32 
+------- ------ ------------------------------- ------- -------------- 
+total                                            3,184 
+
+Number of operation types
+---------------- ------- ----------- 
+operation type         #           % 
+---------------- ------- ----------- 
+smul_f32_f32       2,821       88.6% 
+op_f32_f32           363       11.4% 
+
+Complexity report (model)
+------ ------------------------ ------------------------- ------------------------- -------- -------- ------------------ 
+m_id   name                     c_macc                    c_rom                     c_id     c_dur    l2r (X-CROSS)      
+------ ------------------------ ------------------------- ------------------------- -------- -------- ------------------ 
+1      batch_normalization_20   |||||             18.1%   |||||             20.4%   [0]       16.7%                      
+2      leaky_re_lu_26           ||                 6.0%   |                  0.0%   [1]       14.6%                      
+4      dense_40                 ||||||||||||||||  65.3%   ||||||||||||||||  73.7%   [2]       39.5%                      
+5      leaky_re_lu_27           |                  3.0%   |                  0.0%   [3]        8.0%                      
+7      dense_41_dense           ||                 7.5%   ||                 5.8%   [4, 5]    21.2%   1.31084263e-07 *   
+------ ------------------------ ------------------------- ------------------------- -------- -------- ------------------ 
+macc=3,184 weights=11,284 act=384 ram_io=0
+
+Evaluation report (summary)
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+Output              acc       rmse          mae           l2r           mean        std        nse        cos        tensor                                 
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+HOST c-model #1     87.97%    0.196851775   0.089076728   0.508822441   0.000000    0.196926   0.757991   0.898535   'dense_41', 266 x f32(1x5), m_id=[7]   
+original model #1   87.97%    0.196851775   0.089076728   0.508822441   -0.000000   0.196926   0.757991   0.898535   'dense_41', 266 x f32(1x5), m_id=[7]   
+X-cross #1          100.00%   0.000000051   0.000000023   0.000000131   0.000000    0.000000   1.000000   1.000000   'dense_41', 266 x f32(1x5), m_id=[7]   
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ acc  : Accuracy (class, axis=-1)
+ rmse : Root Mean Squared Error
+ mae  : Mean Absolute Error
+ l2r  : L2 relative error
+ mean : Mean error
+ std  : Standard deviation error
+ nse  : Nash-Sutcliffe efficiency criteria, bigger is better, best=1, range=(-inf, 1]
+ cos  : COsine Similarity, bigger is better, best=1, range=(0, 1]
