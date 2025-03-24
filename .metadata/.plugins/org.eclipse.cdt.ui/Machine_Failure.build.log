@@ -1,10 +1,10 @@
-23:38:16 **** Incremental Build of configuration Debug for project Machine_Failure ****
+01:51:00 **** Incremental Build of configuration Debug for project Machine_Failure ****
 make -j8 all 
 arm-none-eabi-size  Machine_Failure.elf 
    text	   data	    bss	    dec	    hex	filename
-  50640	   1948	   5740	  58328	   e3d8	Machine_Failure.elf
+  50728	   1948	   5740	  58416	   e430	Machine_Failure.elf
 Finished building: default.size.stdout
  
 
-23:38:16 Build Finished. 0 errors, 0 warnings. (took 471ms)
+01:51:00 Build Finished. 0 errors, 0 warnings. (took 529ms)
 
