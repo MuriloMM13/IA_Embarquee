@@ -6,23 +6,30 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="mnist"/>
+		<item key="selection" value="machine"/>
 		<list key="findhistory">
+			<item value="machine"/>
+			<item value="bytes"/>
+			<item value="acquire"/>
+			<item value="post"/>
+			<item value="acqui"/>
+			<item value="MX_"/>
+			<item value="timeout"/>
+			<item value="do"/>
+			<item value="sych"/>
+			<item value="115200"/>
 			<item value="mnist"/>
 			<item value="synchronize_UART"/>
 			<item value="USER CODE BEGIN 6"/>
 			<item value="void sync"/>
 			<item value="void_sync"/>
-			<item value="syn"/>
-			<item value="void "/>
-			<item value="CODE END"/>
 		</list>
 		<list key="replacehistory">
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="1162"/>
-		<item key="DIALOG_Y_ORIGIN" value="274"/>
+		<item key="DIALOG_X_ORIGIN" value="1492"/>
+		<item key="DIALOG_Y_ORIGIN" value="359"/>
 		<item key="DIALOG_WIDTH" value="414"/>
 		<item key="DIALOG_HEIGHT" value="454"/>
 		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>

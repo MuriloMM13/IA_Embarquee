@@ -1,10 +1,10 @@
-16:14:36 **** Incremental Build of configuration Debug for project FinalProject_Soares ****
+01:42:32 **** Incremental Build of configuration Debug for project FinalProject_Soares ****
 make -j8 all 
 arm-none-eabi-size  FinalProject_Soares.elf 
    text	   data	    bss	    dec	    hex	filename
-  50640	   1948	   5740	  58328	   e3d8	FinalProject_Soares.elf
+  50728	   1948	   5740	  58416	   e430	FinalProject_Soares.elf
 Finished building: default.size.stdout
  
 
-16:14:39 Build Finished. 0 errors, 0 warnings. (took 3s.321ms)
+01:42:33 Build Finished. 0 errors, 0 warnings. (took 998ms)
 
