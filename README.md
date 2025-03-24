@@ -109,8 +109,8 @@ class_weight_dict = {i: weight for i, weight in zip(classes, class_weights)}
 
 #### Division into Training and Testing
 The data was divided into:
-1. 70% for training
-2. 30% for testing
+1. 80% for training
+2. 20% for testing
 
 The division was made in a stratified way based on the true class (argmax of each Y vector), ensuring that the proportion between classes is preserved in both sets.
 
