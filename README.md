@@ -235,7 +235,7 @@ plt.show()
 
 Here are the results obtained after training and testing the model. It is worth noting that when training and testing the model again, the results will not be the same due to the randomness of the dataset separation, but the performance does not vary much.
 
-| Classe       | Precision | Recall | F1-Score | Suporte |
+| Class        | Precision | Recall | F1-Score | Suport  |
 |--------------|-----------|--------|----------|---------|
 | No failure   | 0.98      | 0.88   | 0.93     | 205     |
 | TWF          | 0.24      | 0.62   | 0.34     | 8       |
