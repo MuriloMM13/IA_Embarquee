@@ -5,7 +5,7 @@ Caio Vinícius Rodrigues Nobre
 Murilo Mattos Muller
 
 **Institution:**  
-École Nationale Supérieure des Mines de Saint-Étienne (EMSE-ISMIN)  
+École Nationale Supérieure des Mines de Saint-Étienne (EMSE - ISMIN)  
 
 ---
 
